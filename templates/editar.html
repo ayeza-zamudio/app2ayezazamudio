@@ -1,0 +1,21 @@
+{% extends "bootstrap/base.html" %}
+
+{% block content %}
+   {% block body %}
+   <div class = "jumbotron"
+   <h1>Editar Libro </h1>
+
+    <form action="/actualizar" method="POST">
+        <input type="hidden" name="id" id="id" value={{resultado.id}}>
+        <input type="text" name="titulo" id="titulo" value={{resultado.titulo}}>
+        <!-- <input type="text" name="autor" id="autor" value={{resultado.autor}}> -->
+        <input type="text" name="clasificacion" id="clasificacion" value={{resultado.clasificacion}}>
+        <input type="text" name="paginas" id="paginas" value={{resultado.paginas}}>
+        
+        <input type="submit" class="btn btn-primary" value="Actualizar Registro">
+
+    </form>
+   <p>{{mensaje}}</p>
+</div>
+{% endblock %}
+{% endblock %}

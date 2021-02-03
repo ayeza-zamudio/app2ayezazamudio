@@ -1,0 +1,78 @@
+{% extends "bootstrap/base.html" %}
+
+
+{% block title %}
+L O G I N
+{% endblock %}
+
+{% block body %}
+   <body background="/static/a.jpg">
+   
+
+{% block navbar %}
+<!-- Aqui agregar la barra de navegación deseada -->
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">B i e n v e n i d @</a>
+        
+      </div>
+      <ul class="nav navbar-nav">
+        <li><a href="/editorial">E d i t o r i a l </a></li>
+        <li><a href="/libros">L i b r o s</a></li>
+        <li><a href="/autores">A u t o r e s</a></li>
+        <li><a href="/usuarios">U s u a r i o s</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/login"><span class="glyphicon glyphicon-user"></span> Login </a></li>
+        <li><a href="/registro"><span class="glyphicon glyphicon-log-in"></span> Registrar </a></li>
+      </ul>
+    </div>
+  </nav>
+
+{% endblock %}
+
+{% block content %}
+<!-- Aqui agregar el contenido deseado -->
+<div class="container">
+    <div id="login-row" class="row justify-content-center align-items-center">
+        <div id="login-column" class="col-md-6">
+            <div id="login-box" class="col-md-12">
+                <form action="/registro" method="POST">
+                    <div class="form-group">
+                        <label for="nombre_usuario"> Nombre de usuario:</label>
+                        <input type="text" class="form-control" placeholder="Ingresar nombre de usuario"
+                            id="nombre_usuario" name="nombre_usuario">
+                    </div>
+                    <div class="form-group">
+                        <label form="email">Email address:</label>
+                        <input type="email" class="form-control" placeholder="Ingresar email" id="email" name="email">
+                    </div>
+                    <div class="form-group">
+                        <label form="pwd">Password:</label>
+                        <input type="password" class="form-control" placeholder="Enter Password" id="pwd" name="pwd">
+                    </div>
+                    <div class="form-group">
+                        <label form="pwd">Confirmar Password:</label>
+                        <input type="password" class="form-control" placeholder="Enter Password" id="password"
+                            name="password">
+                    </div>
+                    <div class="form-group">
+                        <label form="ciudad">Ciudad:</label>
+                        <input type="text" class="form-control" placeholder="Ingresa tu Ciudad" id="ciudad"
+                            name="ciudad">
+                    </div>
+                    <div class="form-group">
+                        <label form="edad">EDAD:</label>
+                        <input type="text" class="form-control" placeholder="Ingresa tu Edad" id="edad" name="edad">
+                    </div>
+                    <input type="submit" class="btn btn-primary" value="Registrar">
+                    {% if mensaje !="" %}
+                    <p>{{mensaje}}, ir a <a href="{{url_for('login')}}">Login</a></p>
+                    {% endif %}
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% endblock %}

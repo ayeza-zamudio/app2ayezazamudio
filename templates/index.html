@@ -1,0 +1,165 @@
+{% extends "bootstrap/base.html" %}
+
+{% block styles %}
+{{super()}}
+<link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+{% endblock %}
+
+{% block scripts %}
+<script src="{{url_for('static', filename='script.js')}}"></script>
+{{super()}}
+{% endblock %}
+
+
+{% block title %}
+    Inicio
+{% endblock %}
+
+
+
+{% block body %}
+    {% block navbar %}
+        <!-- Aqui agregar la barra de navegación deseada -->
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="/bienvenida">B i e n v e n i d @</a>
+              
+            </div>
+            <ul class="nav navbar-nav">
+              <li><a href="/editorial">E d i t o r i a l</a></li>
+              <li><a href="/libros">L i b r o s</a></li>
+              <li><a href="/autores">A u t o r e s</a></li>
+              <li><a href="/autoregistro">R e g i s t r o   A u t o r</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="/login"><span class="glyphicon glyphicon-user"></span> Login </a></li>
+              <li><a href="/registro"><span class="glyphicon glyphicon-log-in"></span> Registrar </a></li>
+            </ul>
+          </div>
+        </nav>
+    {% endblock %}
+
+  
+    {% block content %}
+        <!-- Aqui agregar el contenido deseado -->
+        <div class="container">
+
+          <!-- Full-width images with number text -->
+          <div class="mySlides">
+            <div class="numbertext">1 / 12</div>
+              <img src="/static/2metros.jpg" style="width:80%">
+          </div>
+        
+          <div class="mySlides">
+            <div class="numbertext">2 / 12</div>
+              <img src="/static/amigo.jpg" style="width:80%">
+          </div>
+        
+          <div class="mySlides">
+            <div class="numbertext">3 / 12</div>
+              <img src="/static/amor.jpg" style="width:80%">
+          </div>
+        
+          <div class="mySlides">
+            <div class="numbertext">4 / 12</div>
+              <img src="/static/conde.jpg" style="width:80%">
+          </div>
+        
+          <div class="mySlides">
+            <div class="numbertext">5 / 12</div>
+              <img src="/static/culpa.jpg" style="width:80%">
+          </div>
+        
+          <div class="mySlides">
+            <div class="numbertext">6 / 12</div>
+              <img src="/static/eclipse.jpg" style="width:80%">
+          </div>
+
+          <div class="mySlides">
+            <div class="numbertext">7 / 12</div>
+              <img src="/static/juegos.jpg" style="width:80%">
+          </div>
+
+          <div class="mySlides">
+            <div class="numbertext">8 / 12</div>
+              <img src="/static/llamas.jpg" style="width:80%">
+          </div>
+
+          <div class="mySlides">
+            <div class="numbertext">9 / 12</div>
+              <img src="/static/luna.jpg" style="width:80%">
+          </div>
+
+          <div class="mySlides">
+            <div class="numbertext">10 / 12</div>
+              <img src="/static/simon.jpg" style="width:80%">
+          </div>
+
+          <div class="mySlides">
+            <div class="numbertext">11 / 12</div>
+              <img src="/static/sinsaj.jpg" style="width:80%">
+          </div>
+
+          <div class="mySlides">
+            <div class="numbertext">12 / 12</div>
+              <img src="/static/violet.jpg" style="width:80%">
+          </div>
+        
+          <!-- Next and previous buttons -->
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        
+          <!-- Image text -->
+          <div class="caption-container">
+            <p id="caption"></p>
+          </div>
+        
+          <!-- Thumbnail images -->
+          <div class="row">
+            <div class="column">
+              <img class="demo cursor" src="/static/2metros.jpg" style="width:80%" onclick="currentSlide(1)" alt="The Woods">
+            </div>
+            <div class="column">
+              <img class="demo cursor" src="/static/amigo.jpg"  style="width:80%" onclick="currentSlide(2)" alt="Cinque Terre">
+            </div>
+            <div class="column">
+              <img class="demo cursor" src="/static/amor.jpg" style="width:80%" onclick="currentSlide(3)" alt="Mountains and fjords">
+            </div>
+            <div class="column">
+              <img class="demo cursor" src="/static/conde.jpg" style="width:80%" onclick="currentSlide(4)" alt="Northern Lights">
+            </div>
+            <div class="column">
+              <img class="demo cursor" src="/static/culpa.jpg" style="width:80%" onclick="currentSlide(5)" alt="Nature and sunrise">
+            </div>
+            <div class="column">
+              <img class="demo cursor" src="/static/eclipse.jpg" style="width:80%" onclick="currentSlide(6)" alt="Snowy Mountains">
+            </div>
+
+            <div class="column">
+              <img class="demo cursor" src="/static/juegos.jpg" style="width:80%" onclick="currentSlide(7)" alt="Snowy Mountains">
+            </div>
+
+            <div class="column">
+              <img class="demo cursor" src="/static/llamas.jpg" style="width:80%" onclick="currentSlide(8)" alt="Snowy Mountains">
+            </div>
+
+            <div class="column">
+              <img class="demo cursor" src="/static/luna.jpg" style="width:80%" onclick="currentSlide(9)" alt="Snowy Mountains">
+            </div>
+
+            <div class="column">
+              <img class="demo cursor" src="/static/simon.jpg" style="width:80%" onclick="currentSlide(10)" alt="Snowy Mountains">
+            </div>
+
+            <div class="column">
+              <img class="demo cursor" src="/static/sinsaj.jpg" style="width:80%" onclick="currentSlide(11)" alt="Snowy Mountains">
+            </div>
+
+            <div class="column">
+              <img class="demo cursor" src="/static/violet.jpg" style="width:80%" onclick="currentSlide(12)" alt="Snowy Mountains">
+            </div>
+          </div>
+        </div>
+    {% endblock %}
+{% endblock %}

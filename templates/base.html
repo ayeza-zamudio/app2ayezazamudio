@@ -1,0 +1,39 @@
+{% extends "bootstrap/base.html" %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block title %}
+    Aquí va el título
+{% endblock %}
+
+{% block body %}
+    {% block navbar %}
+        <!-- Aqui agregar la barra de navegación deseada -->
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="#">B i e n v e n i d @</a>
+              
+            </div>
+            <ul class="nav navbar-nav">
+              
+              <li><a href="/libros">L i b r o s</a></li>
+              <li><a href="/autores">A u t o r e s</a></li>
+             
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="/login"><span class="glyphicon glyphicon-user"></span> Login </a></li>
+              <li><a href="/registro"><span class="glyphicon glyphicon-log-in"></span> Registrar </a></li>
+            </ul>
+          </div>
+        </nav>
+        
+    {% endblock %}
+
+    {% block content %}
+        <!-- Aqui agregar el contenido deseado -->
+        <h1>Hello, Bootstrap</h1>
+    {% endblock %}
+{% endblock %}

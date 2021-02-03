@@ -1,0 +1,63 @@
+{% extends "bootstrap/base.html" %}
+
+
+{% block title %}
+L O G I N
+{% endblock %}
+
+{% block body %}
+
+<body style="background-image:url('/static/s.jpg');
+background-repeat: no-repeat;   background-size: 3000px 1800px; width: 100%; height: 100%;"  >
+   
+
+{% block navbar %}
+<!-- Aqui agregar la barra de navegación deseada -->
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/bienvenida">B i e n v e n i d @</a>
+        
+      </div>
+      <ul class="nav navbar-nav">
+        <li><a href="/editorial">E d i t o r i a l</a></li>
+        <li><a href="/libros">L i b r o s</a></li>
+        <li><a href="/autores">A u t o r e s</a></li>
+        <li><a href="/autoregistro">R e g i s t r o   A u t o r</a></li>
+       
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/login"><span class="glyphicon glyphicon-user"></span> Login </a></li>
+        <li><a href="/registro"><span class="glyphicon glyphicon-log-in"></span> Registrar </a></li>
+      </ul>
+    </div>
+  </nav>
+
+{% endblock %}
+
+{% block content %}
+<!-- Aqui agregar el contenido deseado -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 col-md-4 col-md-offset-4">
+            <h1 style="color:#af0069" class="text-center login-title">I n g r e s a r</h1>
+            <form action="/login" method="post"
+            <div class="account-wall">
+            <center>
+                <img class="profile-img"  src="https://cdn.pixabay.com/photo/2017/06/13/12/53/profile-2398782_1280.png"  style="width:150px;height:150px;
+                    alt="">
+            </center>
+                <form class="form-signin">
+                <input type="text" class="form-control" placeholder="Email" id="email" name="email" required autofocus>
+                <input type="password" class="form-control" placeholder="Password" id="pwd" name="pwd" required>
+                <input type="submit" class="btn btn-primary" value="Login">
+                <a href="#" class="pull-right need-help">Necesita Ayuda? </a><span class="clearfix"></span>
+                </form>
+            </div>
+            <a href="/registro" class="button">Crear una cuenta </a>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}
+{% endblock %}

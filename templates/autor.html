@@ -1,0 +1,79 @@
+{% extends "bootstrap/base.html" %}
+
+
+{% block title %}
+A U T O R E S
+{% endblock %}
+
+{% block body %}
+
+<body style="background-image:url('/static/s.jpg');
+background-repeat: no-repeat;   background-size: 3000px 1800px; width: 100%; height: 100%;">
+
+
+  {% block navbar %}
+  <!-- Aqui agregar la barra de navegación deseada -->
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/bienvenida">B i e n v e n i d @</a>
+
+      </div>
+      <ul class="nav navbar-nav">
+        <li><a href="/editorial">E d i t o r i a l</a></li>
+        <li><a href="/libros">L i b r o s</a></li>
+        <li><a href="/autores">A u t o r e s</a></li>
+        <li><a href="/autoregistro">R e g i s t r o A u t o r</a></li>
+
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/login"><span class="glyphicon glyphicon-user"></span> Login </a></li>
+        <li><a href="/registro"><span class="glyphicon glyphicon-log-in"></span> Registrar </a></li>
+      </ul>
+    </div>
+  </nav>
+
+  {% endblock %}
+
+  {% block content %}
+  <!-- Aqui agregar el contenido deseado -->
+  <h1> A U T O R E S &#128187;</h1>
+  <div class="container">
+    <br>
+    <br>
+    <h2>Principales Autores </h2>
+    <br>
+
+    <p>En esta seccion encontraras los Autores mas reconocidos y que mas recomendaciones
+      tienen en sus libros </p>
+    <div class="container">
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Autor</th>
+            <th>Especializacion</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+
+          {% for resultado in variable %}
+          <tr>
+            <td>{{resultado.id}}</td>
+            <td>{{resultado.nombre}}</td>
+            <td>{{resultado.especializacion}}</td>
+          
+        </tr>
+
+
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+
+
+    {% endblock %}
+    {% endblock %}

@@ -1,0 +1,39 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %}
+   Lista Usuarios
+{% endblock %}
+
+{% block body %}
+
+<tbody>
+
+
+    {% for resultado in variable %}
+    <tr>
+        <!--    <p>{{resultado.nombre}},{{resultado.apellido}}</p>-->
+        <td>{{resultado.id}}</td>
+        <td>{{resultado.nombre}}</td>
+        <td>{{resultado.autor}}</td>
+        <td>{{resultado.clasificacion}}</td>
+        <td>{{resultado.paginas}}</td>
+        
+        
+        <td>
+            <a href="/editar/{{resultado.id }}">Editar</a>
+            <a href="/eliminar/{{resultado.id }}">Eliminar</a>
+        </td>
+    </tr>
+
+    {% endfor %}
+</tbody>
+    {% block navbar %}
+        <!-- Aqui agregar la barra de navegación deseada -->
+        
+    {% endblock %}
+
+    {% block content %}
+        <!-- Aqui agregar el contenido deseado -->
+        <h1>Hello, Bootstrap</h1>
+    {% endblock %}
+{% endblock %}

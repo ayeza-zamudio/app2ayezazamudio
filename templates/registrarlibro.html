@@ -1,0 +1,70 @@
+{% extends "bootstrap/base.html" %}
+
+
+{% block title %}
+Registrar Libro
+{% endblock %}
+
+
+
+{% block body %}
+   <body background="/static/E.jpg">
+   
+
+{% block navbar %}
+<!-- Aqui agregar la barra de navegación deseada -->
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/bienvenida">B i e n v e n i d @</a>
+        
+      </div>
+      <ul class="nav navbar-nav">
+        <li><a href="/editorial">E d i t o r i a l</a></li>
+        <li><a href="/libros">L i b r o s</a></li>
+        <li><a href="/autores">A u t o r e s</a></li>
+        <li><a href="/autoregistro">R e g i s t r o   A u t o r</a></li>
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/login"><span class="glyphicon glyphicon-user"></span> Login </a></li>
+        <li><a href="/registro"><span class="glyphicon glyphicon-log-in"></span> Registrar </a></li>
+      </ul>
+    </div>
+  </nav>
+
+{% endblock %}
+
+{% block content %}
+<!-- Aqui agregar el contenido deseado -->
+<div class="container">
+    <div id="login-row" class="row justify-content-center align-items-center">
+        <div id="login-column" class="col-md-6">
+            <div id="login-box" class="col-md-12">
+                <form action="/registroLibro" method="POST">
+                    <div class="form-group">
+                        <label for="titulo"> Titulo de libro:</label>
+                        <input type="text" class="form-control" placeholder="Ingresar el titulo del libro"
+                            id="titulo" name="titulo">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label form="clasificacion">Clasificacion:</label>
+                        <input type="clasificacion" class="form-control" placeholder="Clasificacion" id="clasificacion" name="clasificacion">
+                    </div>
+                    <div class="form-group">
+                        <label form="paginas">No Paginas:</label>
+                        <input type="paginas" class="form-control" placeholder="Ingresa numero de paginas" id="paginas"
+                            name="paginas">
+                    </div>
+                    
+                    <input type="submit" class="btn btn-primary" value="Registrar Libro">
+                    {% if mensaje !="" %}
+                    <p>{{mensaje}}, IR A --> <a href="{{url_for('libros')}}">LIBROS</a></p>
+                    {% endif %}
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% endblock %}
